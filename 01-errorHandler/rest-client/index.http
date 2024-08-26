@@ -1,0 +1,14 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### 02 next
+GET http://localhost:5000/next
+
+### 03 error -> error handle by express
+GET http://localhost:5000/error1
+
+### 04 error -> manually Error pass to nearest errorMiddleware
+GET http://localhost:5000/error2
+
+### 05 user -> ApiError handler
+GET http://localhost:5000/user

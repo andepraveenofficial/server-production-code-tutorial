@@ -1,0 +1,8 @@
+### 00 Test
+GET http://localhost:5000
+
+### 00 Signup
+GET http://localhost:5000/signup
+
+### 00 Signin
+GET http://localhost:5000/signin
