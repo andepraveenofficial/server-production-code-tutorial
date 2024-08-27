@@ -42,7 +42,7 @@
 1. Setup Environment Variables : `npm install dotenv`
 2. Install Prisma : `npm install prisma`
 3. `npx prisma init` : This will create a prisma folder with a schema.prisma file.
-   - It adds env variable in .env file : `DATABASE_URL="postgresql://postgres:randompassword@localhost:5432/mydb?schema=public"`
+   - It adds env variable in .env file : `DATABASE_URL="postgresql://postgres:randompassword@localhost:5432/mydbName?schema=public"`
 4. Install Prisma Client for Database Interactions
    - `npm install @prisma/client`
 5. Setup dbconfig
@@ -53,31 +53,37 @@ const prisma = new PrismaClient();
 module.exports = prisma;
 ```
 
-### Step 4 : Create Migration Files
+### Step 3 : Create Migration Files
 
 - Create Models
-- Create Migration File
+- Prisma to generate the Prisma Client : `npx prisma generate`
+- Create Migration File to create database and tables.
   - `npx prisma migrate dev --name migration_file_name`
-- Create seeds file
 
-### Step 5 : Open Prisma Studio
+### Step4 : Run seed files
 
-- `npx prisma studio`
+- Create seed files
+- If errors change tsconfig files :
 
-### Format
+```json
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*", "prisma/seeds/**/*"]
+}
+```
+
+- Using seed file to insert data into database
+
+### Step5 : Format
 
 - Prisma Format `npx prisma format`
 
-### Installation
+### Step6 : Open Prisma Studio
 
-- `npm install`
-
-### Start the Application
-
-- Production : `npm start`
-- Development : `npm run dev`
-
-/////////////////////////////////
+- `npx prisma studio`
 
 ### Installation
 
@@ -85,6 +91,8 @@ module.exports = prisma;
 
 ### Start the Application
 
+- Migrations : `npm run migrate`
+- Seeds : `npm run seed`
 - Build : `npm run build`
 - Production : `npm start`
 - Development : `npm run dev`
