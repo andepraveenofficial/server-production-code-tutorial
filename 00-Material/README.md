@@ -9,6 +9,7 @@
 - advancedErrorHandler
 - asyncHandler
 - responseHandler
+- Authentication
 
 </details>
 
@@ -16,7 +17,6 @@
 
 ### Rough
 
-- Authentication
 - Tokens
 - Clean Code
 - Server Code

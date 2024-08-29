@@ -39,7 +39,7 @@
 
 ### step2 : Prisma Setup
 
-1. Setup Environment Variables : `npm install dotenv`
+1. Setup Environment Variables : `npm install dotenv` and config the dotenv in `index.ts` file
 2. Install Prisma : `npm install prisma`
 3. `npx prisma init` : This will create a prisma folder with a schema.prisma file.
    - It adds env variable in .env file : `DATABASE_URL="postgresql://postgres:randompassword@localhost:5432/mydbName?schema=public"`
@@ -50,7 +50,7 @@
 ```js
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
-module.exports = prisma;
+export default prisma;
 ```
 
 ### Step 3 : Create Migration Files
@@ -59,6 +59,11 @@ module.exports = prisma;
 - Prisma to generate the Prisma Client : `npx prisma generate`
 - Create Migration File to create database and tables.
   - `npx prisma migrate dev --name migration_file_name`
+
+```json
+  "migrate": "npx prisma migrate dev --name updated_migration",
+  "seed": "ts-node prisma/seeds/main.seed.ts"
+```
 
 ### Step4 : Run seed files
 
