@@ -1,0 +1,36 @@
+{
+  "name": "07-swagger",
+  "version": "1.0.0",
+  "description": "1. Create NodeJS Environment\r 2. Install Auto Restarter : `npm instal -D nodemon`\r 3. Add Typescript : `npm install -D typescript`\r 4. Add typescript configuration File : `npx tsc --init`, Change the configuration",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "migrate": "npx prisma migrate dev --name updated_migration",
+    "seed": "ts-node prisma/seeds/main.seed.ts",
+    "swagger": "node ./swagger.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.1",
+    "@types/swagger-ui-express": "^4.1.6",
+    "nodemon": "^3.1.4",
+    "swagger": "node ./swagger.js",
+    "swagger-autogen": "^2.23.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "prisma": "^5.19.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
