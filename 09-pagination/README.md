@@ -1,9 +1,9 @@
-# Authentication
+# Pagination
 
 ## Project Setup
 
 1. Create NodeJS Environment
-2. Install Auto Restarter : `npm instal -D nodemon`
+2. Install Auto Restarter : `npm install -D nodemon`
 3. Add Typescript : `npm install -D typescript`
 4. Add typescript configuration File : `npx tsc --init`, Change the configuration
 
@@ -67,7 +67,7 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 ```
 
 2. Install Prisma : `npm install prisma`
-3. `npx prisma init` : This will create a prisma folder with a schema.prisma file.
+3. `npx prisma init` : This will create a prisma folder with a **schema.prisma** file.
    - It adds env variable in .env file : `DATABASE_URL="postgresql://postgres:randompassword@localhost:5432/mydbName?schema=public"`
 4. Install Prisma Client for Database Interactions
    - `npm install @prisma/client`
@@ -95,10 +95,7 @@ model Product {
 
 - Prisma to generate the Prisma Client : `npx prisma generate`
 - Create Migration File to create database and tables.
-
   - `npx prisma migrate dev --name migration_file_name`
-
-- Add script file
 
 ```json
   "migrate": "npx prisma migrate dev --name updated_migration",
@@ -129,34 +126,6 @@ model Product {
 ### Step6 : Open Prisma Studio
 
 - `npx prisma studio`
-
-### swagger Installation
-
-- Install UI : `npm install swagger-ui-express`
-- Install Autogen : `npm install --save-dev swagger-autogen`
-
-Add this code
-
-```ts
-import swaggerUi from "swagger-ui-express";
-import swaggerAutogen from "swagger-autogen";
-import swaggerDocument from "./swagger.json";
-
-const app = express();
-const port = 5000;
-
-app.get("/api-docs", swaggerUi.setup(swaggerDocument));
-```
-
-- Go with documentation : [https://swagger-autogen.github.io/docs/getting-started/quick-start]
-
-```json
-    "swagger": "node ./swagger.mjs"
-```
-
-- Run swagger : `npm run swagger`
-
-- Enable in tsconfig : `"resolveJsonModule": true,`
 
 ### Installation
 

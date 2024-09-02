@@ -91,7 +91,7 @@ Choose : Yes
 Choose : npm
 ```
 
-- After configuration eslint creates `eslint.config.mjs` file.
+-  After initialization, eslint creates `eslint.config.mjs` file.
 
 ```mjs eslint.config.mjs
 import globals from 'globals';
@@ -127,7 +127,7 @@ export default [
 
 ```json
  "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+ "lint:fix": "eslint src/**/*.ts --fix"
 ```
 
 ### 2. prettier
@@ -162,7 +162,7 @@ export default [
 
 - `git init`
 
-### 4. husky
+### 5. husky
 
 - Install husky : `npm install -D husky`
 - Initialize husky : `npx husky`
