@@ -1,0 +1,18 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+######################
+
+### 01 Get All Products -> Error -> without asyncHandler
+GET http://localhost:5000/products1
+
+### 02 Get All Products -> Error -> with asyncHandler
+GET http://localhost:5000/products2
+
+### 03 Get All Products ->  Success -> without asyncHandler
+GET http://localhost:5000/products3
+
+### 04 Get All Products ->  Success -> with asyncHandler
+GET http://localhost:5000/products4
+
+#####################

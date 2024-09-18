@@ -1,8 +1,0 @@
-### 00 Home -> Test 
-GET http://localhost:5000
-
-### 01 user1 -> Error responseHandler
-GET http://localhost:5000/user1
-
-### 02 user2 -> Success responseHandler
-GET http://localhost:5000/user2

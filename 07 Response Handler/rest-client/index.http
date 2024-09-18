@@ -1,0 +1,15 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+######################
+
+### 01 Get All Products -> apiError
+GET http://localhost:5000/products1
+
+### 02 Get All Products -> apiCustomError
+GET http://localhost:5000/products2
+
+### 03 Get All Products ->  Success responseHandler
+GET http://localhost:5000/products3
+
+#####################

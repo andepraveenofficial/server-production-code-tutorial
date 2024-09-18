@@ -1,4 +1,4 @@
-# Error Handler
+# Async Handler
 
 ### Techstack
 
@@ -7,13 +7,6 @@
 3. Server : `express`
 4. ORM : `prismaORM`
 5. Database : `Postgresql`
-
-### Error Handler
-
-1. errorMiddleware
-2. global errorMiddleware
-3. apiError Handler
-4. apiCustomError Handler
 
 ### Installation
 

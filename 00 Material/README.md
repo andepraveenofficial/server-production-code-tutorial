@@ -30,7 +30,7 @@
 5. Error Handling
    - global errorMiddleware
    - Custom errorHandler
-   - Not Found Route
+   - NotFound Route
 6. DTOs Structure
 
    - HttpResponse

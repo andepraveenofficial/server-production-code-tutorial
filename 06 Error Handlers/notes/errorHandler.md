@@ -7,8 +7,7 @@
 
 - Handler
 - Middlewares
-- Error
-- Response
+- Error Handler
 - next
 - instanceof
 - Documentation
