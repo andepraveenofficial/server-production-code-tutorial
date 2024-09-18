@@ -1,0 +1,24 @@
+### 01 Home -> Test 
+GET http://localhost:5000
+
+### 02 next
+GET http://localhost:5000/next
+
+
+######################
+
+### 03 error -> error handle by express
+GET http://localhost:5000/error1
+
+### 04 error -> manually Error pass to nearest errorMiddleware
+GET http://localhost:5000/error2
+
+######################
+
+### 05 Get All Products - apiError
+GET http://localhost:5000/products1
+
+### 06 Get All Products - apiCustomError
+GET http://localhost:5000/products2
+
+#####################

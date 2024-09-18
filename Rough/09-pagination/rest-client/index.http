@@ -1,0 +1,5 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### 01 Products  -> Get All Products
+GET http://localhost:5000/products

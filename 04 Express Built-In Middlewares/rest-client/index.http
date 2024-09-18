@@ -1,0 +1,21 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### Variables
+@baseUrl = http://localhost:5000
+
+### 01 Get All Products
+GET http://localhost:5000/products
+
+### 02 Get All Products
+GET {{baseUrl}}/api/v1/products
+
+### 03 Create New Product
+POST {{baseUrl}}/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "New Product 2",
+  "price": 19.99
+}
+

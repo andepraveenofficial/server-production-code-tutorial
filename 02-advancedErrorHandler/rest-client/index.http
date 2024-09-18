@@ -1,5 +1,0 @@
-### 00 Home -> Test 
-GET http://localhost:5000
-
-### 05 user -> Advanced Error handler
-GET http://localhost:5000/user
