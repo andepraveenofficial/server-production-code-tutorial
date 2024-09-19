@@ -17,7 +17,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
-/* -----> Built-In Middlewares <----- */
+/* -----> Express Built-In Middlewares <----- */
 // Handle JSON data
 app.use(express.json());
 

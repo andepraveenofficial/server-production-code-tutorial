@@ -199,9 +199,11 @@ model Product {
 
 ### Start the Server
 
+- Prisma Format : `npx prisma format`
 - Connect prismaClient : `npx prisma generate`
 - Migrations : `npm run migrate`
 - Seeds : `npm run seed`
 - Build : `npm run build`
 - Production : `npm start`
 - Development : `npm run dev`
+- Prisma Studio (Database) : `npx prisma studio`

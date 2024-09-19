@@ -1,0 +1,53 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+###### Authentication ######
+
+### 01 Signup
+POST http://localhost:5000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "Praveen",
+    "lastName": "Ande",
+    "email": "praveenande@example.com",
+    "password":"praveenande123",
+    "roleId":"1"
+}
+
+### 02 Signin
+POST http://localhost:5000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+####### Authentication ########
+
+### 03 Get All Products -> with authMiddleware -> From CookieStorage
+GET http://localhost:5000/products1
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOWEwZTIyZC1hYWEzLTQ5NjQtYjI5Mi1mMGE3MDk2NzYzYzciLCJpYXQiOjE3MjY3NzA1NTcsImV4cCI6MTcyNzM3NTM1N30.1Y1SIZqOn3IKNig8grlOyfHcfaoNXlPtWI531Z4or3U
+
+####### Authorization ########
+
+### 04 Get All Products -> MANAGER
+GET http://localhost:5000/products2
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOWEwZTIyZC1hYWEzLTQ5NjQtYjI5Mi1mMGE3MDk2NzYzYzciLCJpYXQiOjE3MjY3NzA1NTcsImV4cCI6MTcyNzM3NTM1N30.1Y1SIZqOn3IKNig8grlOyfHcfaoNXlPtWI531Z4or3U
+
+### 05 Get All Products -> ADMIN
+GET http://localhost:5000/products3
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOWEwZTIyZC1hYWEzLTQ5NjQtYjI5Mi1mMGE3MDk2NzYzYzciLCJpYXQiOjE3MjY3NzA1NTcsImV4cCI6MTcyNzM3NTM1N30.1Y1SIZqOn3IKNig8grlOyfHcfaoNXlPtWI531Z4or3U
+
+### 06 Get All Products -> USER
+GET http://localhost:5000/products4
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOWEwZTIyZC1hYWEzLTQ5NjQtYjI5Mi1mMGE3MDk2NzYzYzciLCJpYXQiOjE3MjY3NzA1NTcsImV4cCI6MTcyNzM3NTM1N30.1Y1SIZqOn3IKNig8grlOyfHcfaoNXlPtWI531Z4or3U
+
+################
+
+### 08 Signout
+GET http://localhost:5000/signout
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOWEwZTIyZC1hYWEzLTQ5NjQtYjI5Mi1mMGE3MDk2NzYzYzciLCJpYXQiOjE3MjY3NzA1NTcsImV4cCI6MTcyNzM3NTM1N30.1Y1SIZqOn3IKNig8grlOyfHcfaoNXlPtWI531Z4or3U
+
+################
