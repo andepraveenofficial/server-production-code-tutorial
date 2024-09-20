@@ -1,0 +1,34 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### 01 Get All Products
+GET http://localhost:5000/products
+
+### 02 Create New Product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name": "New Products1",
+  "price": 19.99
+}
+
+### 03 Update Product (Full Update)
+PUT http://localhost:5000/products/7c0164ec-a20b-4c77-b461-8704c0887712
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "price": 25.99
+}
+
+### 04 Patch Product (Partial Update)
+PATCH http://localhost:5000/products/7c0164ec-a20b-4c77-b461-8704c0887712
+Content-Type: application/json
+
+{
+  "price": 29.99
+}
+
+### 05 Soft Delete Product
+DELETE http://localhost:5000/products/7c0164ec-a20b-4c77-b461-8704c0887712
