@@ -1,0 +1,14 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### 01 Get All Products
+GET http://localhost:5000/products
+
+### 02 Create a Product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "DELL",
+    "price": 80000
+}

@@ -7,7 +7,7 @@
 
 - Server
 - Database
-- API Design
+- API Design -> MVC architecture
 
 </details>
 

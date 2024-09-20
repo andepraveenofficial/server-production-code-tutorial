@@ -1,0 +1,6 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/\",\"url\":\"200\",\"status\":\"6.626\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-20T06:50:15.224Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"I am Fetch products","timestamp":"2024-09-20T06:50:23.777Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/products\",\"url\":\"200\",\"status\":\"88.537\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-20T06:50:23.866Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"I am products Route","timestamp":"2024-09-20T06:51:40.222Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/products\",\"url\":\"200\",\"status\":\"192.980\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-20T06:51:40.414Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/\",\"url\":\"200\",\"status\":\"2.286\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-20T06:51:42.565Z"}

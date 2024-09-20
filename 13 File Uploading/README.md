@@ -1,4 +1,4 @@
-# Authorization
+# File Uploading
 
 ### Techstack
 
@@ -8,10 +8,10 @@
 4. ORM : `prismaORM`
 5. Database : `Postgresql`
 
-### Authorization
+### File Uploading
 
-Authorization is nothing but RBAC.
-**RBAC** stands for **Role Based Access Control**
+- Install multer : `npm install multer`
+- Install multer types : `npm install -D @types/multer`
 
 ### Installation
 
@@ -19,9 +19,11 @@ Authorization is nothing but RBAC.
 
 ### Start the Server
 
+- Prisma Format : `npx prisma format`
 - Connect prismaClient : `npx prisma generate`
 - Migrations : `npm run migrate`
 - Seeds : `npm run seed`
 - Build : `npm run build`
 - Production : `npm start`
 - Development : `npm run dev`
+- Prisma Studio (Database) : `npx prisma studio`

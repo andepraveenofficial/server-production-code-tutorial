@@ -1,4 +1,4 @@
-# Authorization
+# QueryParams
 
 ### Techstack
 
@@ -8,10 +8,11 @@
 4. ORM : `prismaORM`
 5. Database : `Postgresql`
 
-### Authorization
+### Query Params
 
-Authorization is nothing but RBAC.
-**RBAC** stands for **Role Based Access Control**
+1. searching
+2. sorting
+3. pagination
 
 ### Installation
 
@@ -19,9 +20,11 @@ Authorization is nothing but RBAC.
 
 ### Start the Server
 
+- Prisma Format : `npx prisma format`
 - Connect prismaClient : `npx prisma generate`
 - Migrations : `npm run migrate`
 - Seeds : `npm run seed`
 - Build : `npm run build`
 - Production : `npm start`
 - Development : `npm run dev`
+- Prisma Studio (Database) : `npx prisma studio`

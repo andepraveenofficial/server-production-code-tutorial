@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import prisma from "./config/prisma";
 import path from "path";
 import dotenv from "dotenv";
+import { applyQueryOptions } from "./utils/query.utils";
 
 // Load environment variables
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
@@ -37,12 +38,35 @@ app.get("/", (req: Request, res: Response) => {
   res.send("I am Home route");
 });
 
-app.get("/products", async (req: Request, res: Response) => {
+/* -----> QueryParams <----- */
+
+// without query params
+app.get("/products1", async (req: Request, res: Response) => {
+  console.log("I am products1 Route");
   try {
     // Fetch all products from the database
     const products = await prisma.product.findMany({});
 
     res.status(200).json(products);
+  } catch (error) {
+    console.error("Error fetching products1:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching products1" });
+  }
+});
+
+// with query params
+app.get("/products", async (req: Request, res: Response) => {
+  try {
+    const paginatedProducts = await applyQueryOptions(
+      req,
+      prisma.product,
+      ["name"], // searchable fields
+      ["name", "price", "createdAt"] // sortable fields
+    );
+
+    res.status(200).json(paginatedProducts);
   } catch (error) {
     console.error("Error fetching products:", error);
     res

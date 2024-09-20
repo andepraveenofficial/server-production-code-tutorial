@@ -1,0 +1,40 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+### 01 Get All Products
+GET http://localhost:5000/products1
+
+
+####### Query Params ##########
+
+### Test 1: Default Pagination
+GET http://localhost:5000/products
+
+### Test 2: Specify Page 1 with 5 items (default 10 items)  per page
+GET http://localhost:5000/products?page=1&limit=5
+
+### Test 3: Page 2 with 5 items per page
+GET http://localhost:5000/products?page=2&limit=5
+
+### Test 4: Page 3 with 5 items per page
+GET http://localhost:5000/products?page=3&limit=5
+
+### Test 5: Attempt to get a page beyond total pages
+GET http://localhost:5000/products?page=100&limit=5
+
+### Test 6: Use a large limit
+GET http://localhost:5000/products?page=1&limit=50
+
+### Test 7: Attempt to use a limit beyond the maximum
+GET http://localhost:5000/products?page=1&limit=200
+
+### Test 8: Use pagination with search
+GET http://localhost:5000/products?page=1&limit=10&search=phone
+
+### Test 9: Use pagination with sorting
+GET http://localhost:5000/products?page=1&limit=10&sort=price:desc
+
+### Test 10: Combine pagination, search, and sorting
+GET http://localhost:5000/products?page=1&limit=10&search=laptop&sort=price:asc
+
+##########################
