@@ -18,26 +18,25 @@
 
 - Install passport stratergy types : `npm install -D @types/passport-google-oauth2`
 
+3. Install sessionStorage : `npm install express-session`
+
+- Install sessionStorage types : `npm install -d @types/express-session`
+
 ### Fix Errors
 
 - Created Global AuthRequest
 
 ```ts
-interface AuthRequest {
-  userId: string;
-  userEmail: string;
-}
-
 declare global {
-  namespace Express {
-    interface Request {
-      user?: AuthRequest;
+  export namespace Express {
+    export interface User {
+      user: {
+        userId: string;
+        userEmail: string;
+      };
     }
   }
 }
-
-export {};
-
 ```
 
 ### Installation
