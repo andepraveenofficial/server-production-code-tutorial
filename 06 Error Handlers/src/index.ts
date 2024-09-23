@@ -117,7 +117,6 @@ app.get(
   }
 );
 
-
 /* -----> Error Handling Middleware <----- */
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error("I am passing this Error to next error-middleware");
@@ -125,3 +124,11 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 app.use(errorMiddleware);
+
+/* -----> NotFound Route <----- */
+app.use((req: Request, res: Response) => {
+  res.status(404).json({
+    status: "error",
+    message: "Route Not available",
+  });
+});

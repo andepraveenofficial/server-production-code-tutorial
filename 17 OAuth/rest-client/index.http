@@ -1,0 +1,56 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+###### Authentication ######
+
+### 01 Signup
+POST http://localhost:5000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "Praveen",
+    "lastName": "Ande",
+    "email": "praveenande@example.com",
+    "password":"praveenande123"
+}
+
+### 02 Signin
+POST http://localhost:5000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "praveenande@example.com",
+  "password": "praveenande123"
+}
+
+###############
+
+### 03 Get All Products -> without authMiddleware
+GET http://localhost:5000/products1
+
+###############
+
+### 04 Get All Products -> with authMiddleware -> Authorization header
+GET http://localhost:5000/products2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDE5NjM2Yi1lNDRlLTQwZTMtYWI2Yi05ODgyNDExMjFhMTciLCJpYXQiOjE3MjcwOTg2NDYsImV4cCI6MTcyNzcwMzQ0Nn0.rIKSc03ETar4-swbWVy5IijgtejwI54ruWOhhCtgPD8
+
+###############
+
+### 07 Get All Products -> with authMiddleware -> From CookieStorage
+GET http://localhost:5000/products3
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDE5NjM2Yi1lNDRlLTQwZTMtYWI2Yi05ODgyNDExMjFhMTciLCJpYXQiOjE3MjcwOTg2NDYsImV4cCI6MTcyNzcwMzQ0Nn0.rIKSc03ETar4-swbWVy5IijgtejwI54ruWOhhCtgPD8
+
+################
+
+### 08 Signout
+GET http://localhost:5000/signout
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDE5NjM2Yi1lNDRlLTQwZTMtYWI2Yi05ODgyNDExMjFhMTciLCJpYXQiOjE3MjcwOTg2NDYsImV4cCI6MTcyNzcwMzQ0Nn0.rIKSc03ETar4-swbWVy5IijgtejwI54ruWOhhCtgPD8
+
+################
+
+######## OAuth ########
+
+### 01 Google Login
+GET http://localhost:5000/auth/google
+
+

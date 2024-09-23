@@ -22,3 +22,6 @@ GET http://localhost:5000/products1
 GET http://localhost:5000/products2
 
 #####################
+GET http://localhost:5000/notfound
+
+#####################
