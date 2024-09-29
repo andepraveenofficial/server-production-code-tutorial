@@ -1,5 +1,8 @@
 # View (EJS)
 
+- **EJS** stands for **Embedded Javascript**
+- It is a SSR (Server-Side Rendering)
+
 ### Techstack
 
 1. Environment : `NodeJS`
@@ -9,6 +12,10 @@
 5. Database : `Postgresql`
 
 ### EJS Setup
+
+- Install ejs : `npm install ejs`
+- Install ejs types : `npm install -D @types/ejs`
+- Documentation : [https://ejs.co/#install]
 
 ### Installation
 

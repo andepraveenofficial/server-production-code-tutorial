@@ -11,6 +11,7 @@ import authMiddleware, { AuthRequest } from "./middlewares/auth.middleware";
 
 /* -----> nodemailer <----- */
 import transporter from "./config/nodemailer";
+import { userRegistration } from "./utils/templates/registration.template";
 
 // Verify connection configuration
 transporter.verify((error, success) => {
@@ -233,10 +234,11 @@ async function sendGmail(email: string) {
     to: email, // list of receivers
     subject: "I am Subject", // Subject line
     text: "I am Text", // plain text body
-    html: "<div><h1>You Successfully Registered</h1></div>", // html body
+    // html: "<div><h1>You Successfully Registered</h1></div>", // html body
+    html: userRegistration("Praveen", "Mahesh"),
   });
 
   console.log("Message sent: ", info.messageId);
 }
 
-// sendGmail("praveenande84@gmail")
+sendGmail("praveenande84@gmail.com");

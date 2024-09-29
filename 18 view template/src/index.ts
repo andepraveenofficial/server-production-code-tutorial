@@ -16,6 +16,20 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 
+// Middleware for JSON parsing (optional)
+app.use(express.json());
+
+/* -----> Template Engine <----- */
+import viewRoutes from "./routes/view.route";
+
+// Set the view engine to EJS
+app.set("view engine", "ejs");
+
+// Set the directory where your EJS templates are located
+app.set("views", path.join(__dirname, "views"));
+
+app.use("/", viewRoutes);
+
 /* -----> Database Connection <------ */
 async function testDbConnection() {
   try {
@@ -32,12 +46,12 @@ testDbConnection();
 
 /* -----> Routes <----- */
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/api", (req: Request, res: Response) => {
   console.log("I am Home Route");
   res.send("I am Home route");
 });
 
-app.get("/products", async (req: Request, res: Response) => {
+app.get("/api/products", async (req: Request, res: Response) => {
   try {
     // Fetch all products from the database
     const products = await prisma.product.findMany({});
@@ -50,3 +64,8 @@ app.get("/products", async (req: Request, res: Response) => {
       .json({ error: "An error occurred while fetching products" });
   }
 });
+
+/* -----> Template Engine <----- */
+// app.get("/view", (req, res) => {
+//   res.render("index");
+// });
