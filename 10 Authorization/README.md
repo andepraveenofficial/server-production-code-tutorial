@@ -10,8 +10,8 @@
 
 ### Authorization
 
-Authorization is nothing but RBAC.
-**RBAC** stands for **Role Based Access Control**
+- Authorization is nothing but RBAC.
+- **RBAC** stands for **Role Based Access Control**
 
 ### Installation
 

@@ -8,6 +8,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import authMiddleware, { AuthRequest } from "./middlewares/auth.middleware";
+
+/* -----> Authorization <----- */
 import roleMiddleware from "./middlewares/role.middleware";
 
 // Load environment variables

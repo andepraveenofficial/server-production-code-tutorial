@@ -21,6 +21,9 @@ app.listen(port, () => {
 // Handle JSON data
 app.use(express.json());
 
+// Handle Static files
+app.use(express.static(path.join(__dirname, "../", "public")));
+
 /* -----> Routes <----- */
 
 app.get("/", (req: Request, res: Response) => {

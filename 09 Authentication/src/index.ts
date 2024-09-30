@@ -83,14 +83,16 @@ app.post("/auth/signin", async (req: Request, res: Response) => {
 
     // Check if user exists
     if (!user) {
-      return res.status(400).json({ error: "User not found" });
+      res.status(400).json({ error: "User not found" });
+      return;
     }
 
     // Verify the password
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      res.status(400).json({ error: "Invalid credentials" });
+      return;
     }
 
     const refreshToken = jwt.sign(

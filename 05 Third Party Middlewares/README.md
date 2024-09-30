@@ -21,6 +21,36 @@ CORS allows one website to get data from another website, but only if the other 
 - Install : `npm install cors`
 - Install cors types : `npm install -D @types/cors`
 
+```ts
+app.use(cors()); // Allows all origins by default
+```
+
+```ts
+// CORS options
+const whitelist = [
+  "https://www.yoursite.com",
+  "http://127.0.0.1:5000",
+  "http://localhost:5000",
+];
+const corsOptions = {
+  // origin: "http://localhost:3000", // Allow only requests from this origin
+  origin: (
+    origin: string | undefined,
+    callback: (err: Error | null, allow?: boolean) => void
+  ) => {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: "GET,POST",
+  allowedHeaders: "Content-Type,Authorization",
+};
+
+app.use(cors(corsOptions)); // CORS origin
+```
+
 ### 2. helmet
 
 By simply adding `app.use(helmet())` to your Express.js application, Helmet will automatically set several security headers based on industry best practices.

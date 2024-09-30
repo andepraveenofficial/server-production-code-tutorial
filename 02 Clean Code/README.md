@@ -20,8 +20,7 @@
 - Install husky : `npm install -D husky`
 - Initialize husky : `npx husky init`
 - Add a `pre-commit` hook:
-  - Inside the **husky** folder, create a pre-commit file and add:
-  - These run before commit.
+  - Inside the **husky** folder, create a pre-commit file and add below code (These run before commit):
 
 ```bash
 npm run format
@@ -65,31 +64,51 @@ Choose : npm
 ```mjs eslint.config.mjs
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-plugin-prettier';
 
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     languageOptions: {
+      parser: tsParser, // Specify the parser for TypeScript files
       globals: globals.browser,
     },
-    plugins: ['prettier'], // Add Prettier plugin
+    plugins: {
+      prettier, // Use Prettier as a plugin object
+      '@typescript-eslint': tseslint, // Add TypeScript ESLint as a plugin object
+    },
     rules: {
       'no-unused-vars': 'error', // Unused variables
       indent: ['error', 2], // Indentation
-      quotes: ['error', 'single'], // strings must be in single quotes
-      'no-console': 'warn', // Allow console statements but warn, useful for development and reminding to clean up before production
+      quotes: ['error', 'single'], // Strings must be in single quotes
+      'no-console': 'warn', // Allow console statements but warn
       'no-debugger': 'error', // Throw an error if the debugger statement is used
-      eqeqeq: ['error', 'always'], // use === and !== instead of == and !=
-      semi: ['error', 'always'], // use semicolons at the end of statements
+      eqeqeq: ['error', 'always'], // Use === and !== instead of == and !=
+      semi: ['error', 'always'], // Use semicolons at the end of statements
       curly: ['error', 'all'], // Require curly braces for all control statements
-      camelcase: 'error', // use camelCase for variable and function names
+      camelcase: 'error', // Use camelCase for variable and function names
       'no-trailing-spaces': 'error', // Disallow trailing whitespace at the end of lines
-      '@typescript-eslint/no-unused-vars': ['warn'],
+      '@typescript-eslint/no-unused-vars': ['warn'], // TypeScript specific rule for unused vars
+      'prettier/prettier': 'error', // Integrate Prettier rules with ESLint
     },
   },
+  // Include recommended configurations directly
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  {
+    languageOptions: {
+      parser: tsParser,
+      globals: globals.node,
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      // Additional rules from TypeScript ESLint
+      ...tseslint.configs.recommended.rules,
+    },
+  },
 ];
 ```
 
@@ -123,6 +142,38 @@ export default [
 ```
 
 - Add `.prettierignore`
+
+```prettierignore
+rest-client
+
+# Build output
+dist/
+build/
+out/
+
+# Node modules
+node_modules/
+
+# TypeScript declaration files
+*.d.ts
+
+# Environment files
+.env
+.env.*
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Compiled JavaScript files
+src/**/*.js
+
+# Ignore specific config files
+.eslintrc.js
+tsconfig.json
+
+```
 
 #### 5. combine eslint and prettier
 

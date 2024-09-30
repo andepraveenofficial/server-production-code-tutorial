@@ -8,6 +8,7 @@ const errorMiddleware = (
   err: CustomError, // Use the extended interface
   req: Request,
   res: Response,
+  // eslint-disable-next-line
   next: NextFunction
 ) => {
   const status = err.statusCode ?? 500;

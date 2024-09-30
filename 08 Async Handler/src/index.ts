@@ -67,7 +67,7 @@ app.get(
 // Error -> with asyncHandler
 app.get(
   "/products2",
-  asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+  asyncHandler(async (req: Request, res: Response) => {
     console.log("I am Products2 Route");
 
     const isAvailable = false;
@@ -107,7 +107,7 @@ app.get(
 // Success -> with asyncHandler
 app.get(
   "/products4",
-  asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+  asyncHandler(async (req: Request, res: Response) => {
     console.log("I am Products4 Route");
     const isAvailable = true;
     // Fetch all products from the database
