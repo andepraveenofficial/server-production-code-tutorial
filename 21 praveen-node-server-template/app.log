@@ -1,3 +1,14 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/\",\"url\":\"200\",\"status\":\"29.634\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T09:17:17.469Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/notfound\",\"url\":\"404\",\"status\":\"4.379\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T09:17:31.595Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/products2\",\"url\":\"500\",\"status\":\"6.708\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T09:17:42.658Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/\",\"url\":\"304\",\"status\":\"10.988\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:36.167Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/favicon.ico\",\"url\":\"404\",\"status\":\"3.265\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:36.409Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/\",\"url\":\"200\",\"status\":\"1.860\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:43.878Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/swagger-ui-init.js\",\"url\":\"200\",\"status\":\"0.632\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:43.927Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/swagger-ui-bundle.js\",\"url\":\"200\",\"status\":\"11.056\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:43.953Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/swagger-ui.css\",\"url\":\"200\",\"status\":\"154.297\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:44.080Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/swagger-ui-standalone-preset.js\",\"url\":\"200\",\"status\":\"197.587\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:44.126Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/api-docs/favicon-32x32.png\",\"url\":\"200\",\"status\":\"12.540\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-09-30T16:00:44.569Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/\",\"url\":\"200\",\"status\":\"107.200\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-01T14:06:11.239Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/favicon.ico\",\"url\":\"404\",\"status\":\"4.918\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-01T14:06:11.511Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET/view\",\"url\":\"200\",\"status\":\"151.997\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-01T14:06:16.693Z"}

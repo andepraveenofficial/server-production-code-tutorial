@@ -4,7 +4,7 @@ interface Product {
   price: number;
   createdAt: Date;
   updatedAt: Date;
-  deletedAt?: Date;
+  deletedAt?: Date | null;
 }
 
 export default Product;

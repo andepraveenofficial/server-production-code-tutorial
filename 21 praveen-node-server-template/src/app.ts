@@ -1,6 +1,10 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 
+/* -----> swagger <----- */
+import swaggerUi from 'swagger-ui-express';
+import swaggerOptions from '../swagger-output.json';
+
 /* -----> Third Party Packages <----- */
 import cors from 'cors';
 import corsOptions from './config/cors'; // cors options
@@ -14,6 +18,10 @@ import cookieParser from 'cookie-parser';
 import asyncHandler from './handlers/async.handler';
 import ApiError from './handlers/apiError.handler';
 import errorMiddleware from './handlers/error.handler';
+
+/* -----> Template Engine <----- */
+import viewRoutes from './api/v1/routes';
+import loggerMorgan from './config/logger';
 
 /* -----> API Routes <----- */
 import apiRoutes from './api';
@@ -33,10 +41,6 @@ app.use(express.static(path.join(__dirname, '../', 'public'))); // Handle Static
 /* -----> logger Middleware <----- */
 app.use(loggerMorgan);
 
-/* -----> Template Engine <----- */
-import viewRoutes from './api/v1/routes';
-import loggerMorgan from './config/logger';
-
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 
@@ -44,6 +48,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 /* -----> Routes <----- */
+
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerOptions));
 
 app.get('/', (req: Request, res: Response) => {
   console.log('I am Home Route');

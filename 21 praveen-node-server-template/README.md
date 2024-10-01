@@ -25,7 +25,10 @@
 6. Authorization
 7. QueryParams
 8. Logger
-9. API design
+9. Communication
+10. view
+11. swagger
+12. API design
 
 ### Installation
 
