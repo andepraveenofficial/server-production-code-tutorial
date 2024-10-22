@@ -1,0 +1,31 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+###### Authentication ######
+
+### 01 Signup
+POST http://localhost:5000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "",
+    "lastName": "",
+    "email": "praveenande@example.com",
+    "password":"praveenande123"
+}
+
+### 02 Signin
+POST http://localhost:5000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "praveenande@example.com",
+  "password": "praveenande123"
+}
+
+###############
+
+### 03 Get All Products -> without authMiddleware
+GET http://localhost:5000/products
+
+###############

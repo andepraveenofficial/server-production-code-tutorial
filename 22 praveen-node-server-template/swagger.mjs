@@ -36,7 +36,7 @@ const doc = {
   definitions: {}, // by default: empty object
 };
 
-const outputFile = './swagger-output.json';
+const outputFile = './openapi.json';
 const routes = ['./src/app.ts'];
 
 /* NOTE: If you are using the express Router, you must pass in the 'routes' only the 

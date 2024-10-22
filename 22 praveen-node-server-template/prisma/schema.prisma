@@ -41,5 +41,3 @@ model Product {
   updatedAt DateTime  @updatedAt
   deletedAt DateTime? // optional field for soft deletes
 }
-
-

@@ -3,7 +3,7 @@ import path from 'path';
 
 /* -----> swagger <----- */
 import swaggerUi from 'swagger-ui-express';
-import swaggerOptions from '../swagger-output.json';
+import swaggerOptions from '../openapi.json';
 
 /* -----> Third Party Packages <----- */
 import cors from 'cors';
@@ -29,7 +29,8 @@ import apiRoutes from './api';
 const app = express();
 
 /* -----> Third Party Middlewares <----- */
-app.use(cors(corsOptions)); // CORS origin
+app.use(cors()); // Testing
+// app.use(cors(corsOptions)); // CORS origin
 app.use(helmet()); // Use Helmet to secure the app with default settings
 app.use(limiter); // Use limiter to control to call the APIs
 app.use(cookieParser()); // For Authentication
@@ -60,6 +61,17 @@ app.get('/', (req: Request, res: Response) => {
   console.log(req.originalUrl);
   console.log('--------------');
   res.send('I am Home route');
+});
+
+// Serve the OpenAPI specification at /openapi.json
+app.get('/openapi.json', (req: Request, res: Response) => {
+  const openApiPath = path.join(__dirname, '../', 'openapi.json');
+  console.log(openApiPath);
+  res.sendFile(openApiPath, (err) => {
+    if (err) {
+      res.status(500).send('Error serving OpenAPI spec');
+    }
+  });
 });
 
 // API Versions
