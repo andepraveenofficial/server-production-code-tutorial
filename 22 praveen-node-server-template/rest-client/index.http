@@ -9,9 +9,9 @@ POST http://localhost:5000/api/v1/auth/signup
 Content-Type: application/json
 
 {
-    "firstName": "Praveen",
-    "lastName": "Ande",
-    "email": "praveenande@example.com",
+    "firstName": "",
+    "lastName": "",
+    "email": "praveenanddes@example.com",
     "password":"praveenande123",
     "roleId":"c1f8b534-cf5b-4d39-be98-6ce19aa3e6bf"
 }

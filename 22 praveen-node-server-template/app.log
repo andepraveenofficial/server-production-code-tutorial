@@ -158,3 +158,11 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"500\",\"status\":\"10.054\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-12T06:10:45.323Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"200\",\"status\":\"3512.874\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-12T06:12:53.528Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"200\",\"status\":\"3592.394\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-12T06:13:33.373Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"102.023\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T11:57:13.602Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"200\",\"status\":\"3930.492\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T11:57:25.933Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"142.641\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:05:46.899Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"77.390\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:08:47.853Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"1.087\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:08:56.664Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"113.211\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:13:46.230Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"2.480\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:13:53.356Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST/api/v1/auth/signup\",\"url\":\"400\",\"status\":\"2.066\",\"responseTime\":\"ms\\n\"}","timestamp":"2024-10-22T12:14:07.889Z"}
