@@ -6,7 +6,6 @@ import asyncHandler from '../../../handlers/async.handler';
 
 export const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await userService.getAllUsers(req);
-  // res.status(200).json(products);
   new ApiResponse(res, 200, 'Successfully Retrieves Users', users);
 });
 

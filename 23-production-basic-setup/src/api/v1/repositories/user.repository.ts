@@ -2,6 +2,7 @@ import { UserModel } from '../models';
 import { UpdateUserDto } from '../dtos';
 import prisma from '../../../config/prisma';
 import ApiError from '../../../handlers/apiError.handler';
+import { UpdateUserPartDto } from '../dtos/user.dto';
 
 export const findAll = async (): Promise<UserModel[]> => {
   const users = await prisma.user.findMany({
@@ -21,16 +22,26 @@ export const findById = async (id: string): Promise<UserModel> => {
   return user;
 };
 
-findById('04b2c215-77d4-43c0-af1b-8e25924e787c');
-
 export const update = async (
   id: string,
   updateData: UpdateUserDto,
 ): Promise<UserModel> => {
-  return await prisma.user.update({
+  const updatedUser = await prisma.user.update({
     where: { id },
     data: updateData,
   });
+  return updatedUser;
+};
+
+export const updatePart = async (
+  id: string,
+  updateData: UpdateUserPartDto,
+): Promise<UserModel> => {
+  const partiallyUpdatedUser = await prisma.user.update({
+    where: { id },
+    data: updateData,
+  });
+  return partiallyUpdatedUser;
 };
 
 export const softDelete = async (id: string): Promise<UserModel> => {
@@ -45,8 +56,9 @@ export const softDelete = async (id: string): Promise<UserModel> => {
     throw new ApiError(404, 'User not found or already deleted');
   }
 
-  return await prisma.user.update({
+  const deletedUser = await prisma.user.update({
     where: { id },
     data: { deletedAt: new Date() },
   });
+  return deletedUser;
 };

@@ -10,27 +10,28 @@ export const findUserByEmail = async (
 };
 
 export const createUser = async (userData: SignupDto): Promise<UserModel> => {
-  const user = await prisma.user.create({
+  const newUser = await prisma.user.create({
     data: userData,
   });
 
-  return user;
+  return newUser;
 };
 
 export const updateUser = async (
   id: string,
   updateData: Partial<UserModel>,
 ): Promise<UserModel> => {
-  const user = await prisma.user.update({
+  const updatedUser = await prisma.user.update({
     where: { id },
     data: updateData,
   });
-  return user;
+  return updatedUser;
 };
 
 export const removeRefreshToken = async (id: string): Promise<UserModel> => {
-  return await prisma.user.update({
+  const userWithoutToken = await prisma.user.update({
     where: { id },
     data: { refreshToken: null },
   });
+  return userWithoutToken;
 };

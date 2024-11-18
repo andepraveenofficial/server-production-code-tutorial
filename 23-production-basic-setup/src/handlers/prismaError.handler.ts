@@ -22,7 +22,7 @@ export const handlePrismaError = (error: PrismaErrorTypes): ApiError => {
       case 'P2014':
         return new ApiError(400, 'Invalid ID format or value');
       default:
-        return new ApiError(500, 'Database error occurred');
+        return new ApiError(500, 'Prisma Database Connection Error');
     }
   }
 

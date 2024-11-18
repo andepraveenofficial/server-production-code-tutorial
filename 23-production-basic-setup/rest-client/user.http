@@ -3,13 +3,13 @@
 
 ### 01 Get All Users
 
-@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMWVjYTk0Ny1hZGFlLTQ5MWEtYWM1MC03YjU2NzNjZTVmNTQiLCJpYXQiOjE3MzE5MDQyNTYsImV4cCI6MTczMjUwOTA1Nn0.RXgHiv2NrZ0WtVdSKeqYDRI9jN5cj3m6E0cG2ek8AhE
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyZWZhNjE0Zi04M2QzLTRmZWQtODE0Mi04MjIwMTU2YTQ2MDkiLCJpYXQiOjE3MzE5MTMyNTAsImV4cCI6MTczMjUxODA1MH0.CfUnI7Cc7xvgsvNSvU2eR9yIViolhOLP94BVqERBIZE
 GET http://localhost:5000/api/v1/users
 Cookie: refreshToken={{refreshToken}}
 
 
 ### Get User by Id
-@id = 04b2c215-77d4-43c0-af1b-8e25924e787c
+@id = 65a1c053-9a5d-4ddf-8bdd-57f834648587
 
 GET http://localhost:5000/api/v1/users/{{id}}
 Cookie: refreshToken={{refreshToken}}
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 {
   "firstName": "Updated firstName",
-  "lastName":"Updated secondName"
+  "lastName":"Updated lastName"
 }
 
 

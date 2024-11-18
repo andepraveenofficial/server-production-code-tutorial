@@ -6,7 +6,7 @@ import {
 } from '../../../utils/query.utils';
 import prisma from '../../../config/prisma';
 import { Request } from 'express';
-import { UpdateUserDto } from '../dtos/user.dto';
+import { UpdateUserDto, UpdateUserPartDto } from '../dtos/user.dto';
 
 export const getAllUsers = async (
   req: Request,
@@ -30,16 +30,16 @@ export const getUser = async (id: string): Promise<UserModel> => {
 export const updateUser = async (
   id: string,
   updateData: UpdateUserDto,
-): Promise<UpdateUserDto> => {
+): Promise<UserModel> => {
   const user = await userRepository.update(id, updateData);
   return user;
 };
 
 export const updateUserPart = async (
   id: string,
-  updates: UpdateUserDto,
-): Promise<UpdateUserDto> => {
-  const user = await userRepository.update(id, updates);
+  updates: UpdateUserPartDto,
+): Promise<UserModel> => {
+  const user = await userRepository.updatePart(id, updates);
   return user;
 };
 
