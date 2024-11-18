@@ -38,14 +38,14 @@ const port = 5000;
 
 /* -----> Start the Server <----- */
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+	console.log(`Example app listening on port ${port}`);
 });
 
 /* -----> Routes <----- */
 
 app.get("/", (req: Request, res: Response) => {
-  console.log("I am Home Route");
-  res.send("I am Home route");
+	console.log("I am Home Route");
+	res.send("I am Home route");
 });
 ```
 
@@ -113,12 +113,12 @@ model Product {
 
 ```json
 {
-  "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*", "prisma/seeds/**/*"],
-  "exclude": ["node_modules", "dist", "test/**/*"]
+	"compilerOptions": {
+		"rootDir": "./",
+		"outDir": "./dist"
+	},
+	"include": ["src/**/*", "prisma/seeds/**/*"],
+	"exclude": ["node_modules", "dist", "test/**/*"]
 }
 ```
 

@@ -1,4 +1,4 @@
-# Node Server Template
+# Todo Application : Backend
 
 ### Techstack
 
@@ -6,9 +6,7 @@
 2. Language : `Typescript`
 3. Server : `express`
 4. ORM : `prismaORM`
-5. Database : `Postgresql`
-6. Communication : `nodemailer`
-7. view Template : `ejs`
+5. Database : `SQLite`
 
 ### Setup
 
@@ -23,13 +21,10 @@
    3. Async Handler
 5. Authentication
 6. Validation
-6. Authorization
-7. QueryParams
-8. Logger
-9. Communication
-10. view
-11. swagger
-12. API design
+7. Authorization
+8. QueryParams
+9. Logger
+10. API design
 
 ### Installation
 

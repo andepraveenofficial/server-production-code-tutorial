@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### 02 Signin
-POST http://localhost:5000/auth/signin
+POST http://localhost:5000/api/v1/auth/signin
 Content-Type: application/json
 
 {
@@ -26,70 +26,70 @@ Content-Type: application/json
 }
 
 ### 03 Signout
-GET http://localhost:5000/signout
+GET http://localhost:5000/api/v1/signout
 Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDE5NjM2Yi1lNDRlLTQwZTMtYWI2Yi05ODgyNDExMjFhMTciLCJpYXQiOjE3MjY3NjMxMjQsImV4cCI6MTcyNzM2NzkyNH0.hJIpnDEZ1ZghDXitvzSLhqAbHl3xvXEhJN9J2NDqeak
 
 
 ### 01 Get All Products -> Success -> token
-GET http://localhost:5000/products1
+GET http://localhost:5000/api/v1/products1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYjA4NWZhMi0yZDg0LTRiZjItODUyNy1mZmQ5MGI2ZWM1NTIiLCJpYXQiOjE3Mjc2NzkwNzUsImV4cCI6MTcyODI4Mzg3NX0.6sGGSejaGnlhpLaxiIF9IRJydYaex4X13r9Ql_X-Bwo
 
 ### 01 Get All Products -> Success -> Cookie
-GET http://localhost:5000/products1
+GET http://localhost:5000/api/v1/products1
 Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2Njg1NC1mMTI5LTRlNzQtODgyNi1mMzA3YmE2YzQ1YTEiLCJpYXQiOjE3Mjc2NzYwNDEsImV4cCI6MTcyODI4MDg0MX0.Ex9UIEHYOQTLxf1nNR_RSCzYS2M6Cnbny4ZM3sC50uU
 
 ### 02 Get All Products -> Failure
-GET http://localhost:5000/products2
+GET http://localhost:5000/api/v1/products2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMDE5NjM2Yi1lNDRlLTQwZTMtYWI2Yi05ODgyNDExMjFhMTciLCJpYXQiOjE3MjY3NjMxMjQsImV4cCI6MTcyNzM2NzkyNH0.hJIpnDEZ1ZghDXitvzSLhqAbHl3xvXEhJN9J2NDqeak
 
 ### 02 Get All Products -> Failure
-GET http://localhost:5000/products2
+GET http://localhost:5000/api/v1/products2
 Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2Njg1NC1mMTI5LTRlNzQtODgyNi1mMzA3YmE2YzQ1YTEiLCJpYXQiOjE3Mjc2NzYwNDEsImV4cCI6MTcyODI4MDg0MX0.Ex9UIEHYOQTLxf1nNR_RSCzYS2M6Cnbny4ZM3sC50uU
 
 
 ########## NotFound ############
-GET http://localhost:5000/notfound
+GET http://localhost:5000/api/v1/notfound
 
 
 ####### Query Params ##########
 
 ### Test 1: Default Pagination
-GET http://localhost:5000/products
+GET http://localhost:5000/api/v1/products
 
 ### Test 2: Specify Page 1 with 5 items (default 10 items)  per page
-GET http://localhost:5000/products?page=1&limit=5
+GET http://localhost:5000/api/v1/products?page=1&limit=5
 
 ### Test 3: Page 2 with 5 items per page
-GET http://localhost:5000/products?page=2&limit=5
+GET http://localhost:5000/api/v1/products?page=2&limit=5
 
 ### Test 4: Page 3 with 5 items per page
-GET http://localhost:5000/products?page=3&limit=5
+GET http://localhost:5000/api/v1/products?page=3&limit=5
 
 ### Test 5: Attempt to get a page beyond total pages
-GET http://localhost:5000/products?page=100&limit=5
+GET http://localhost:5000/api/v1/products?page=100&limit=5
 
 ### Test 6: Use a large limit
-GET http://localhost:5000/products?page=1&limit=50
+GET http://localhost:5000/api/v1/products?page=1&limit=50
 
 ### Test 7: Attempt to use a limit beyond the maximum
-GET http://localhost:5000/products?page=1&limit=200
+GET http://localhost:5000/api/v1/products?page=1&limit=200
 
 ### Test 8: Use pagination with search
-GET http://localhost:5000/products?page=1&limit=10&search=phone
+GET http://localhost:5000/api/v1/products?page=1&limit=10&search=phone
 
 ### Test 9: Use pagination with sorting
-GET http://localhost:5000/products?page=1&limit=10&sort=price:desc
+GET http://localhost:5000/api/v1/products?page=1&limit=10&sort=price:desc
 
 ### Test 10: Combine pagination, search, and sorting
-GET http://localhost:5000/products?page=1&limit=10&search=laptop&sort=price:asc
+GET http://localhost:5000/api/v1/products?page=1&limit=10&search=laptop&sort=price:asc
 
 ##########################
 
 ### 01 Get All Products
-GET http://localhost:5000/api/v1/products
+GET http://localhost:5000/api/v1/api/v1/products
 
 ### 02 Create New Product
-POST http://localhost:5000/api/v1/products
+POST http://localhost:5000/api/v1/api/v1/products
 Content-Type: application/json
 
 {

@@ -1,0 +1,8 @@
+### 00 Home -> Test 
+GET http://localhost:5000
+
+
+########## NotFound ############
+GET http://localhost:5000/api/v1/notfound
+
+

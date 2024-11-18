@@ -40,6 +40,7 @@ In ExpressJS, we have handlers
 
 ### 1. Normal Middleware
 
+- If you run same logic for every Request, you need to use middleware.
 - Normal Middleware runs for every request, no matter which route is used.
 - Purpose: Used for preprocessing requests and can handle tasks like logging, adding headers, or modifying request data.
 - Location: Defined using `app.use()` and executes for every request before reaching the route handlers or other middleware.
@@ -48,9 +49,9 @@ In ExpressJS, we have handlers
 ```ts
 // Use Normal Middleware before Route
 app.use((req: Request, res: Response, next: NextFunction) => {
-  // Normal Middleware
-  console.log("Normal Middleware executed for every request");
-  next(); // Pass control to the next middleware or route handler
+	// Normal Middleware
+	console.log("Normal Middleware executed for every request");
+	next(); // Pass control to the next middleware or route handler
 });
 ```
 
@@ -59,7 +60,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 - When an error is encountered, Express automatically invokes the nearest error-handling middleware with the error object.
 - When an error occurs, Express skips remaining route handlers and middleware, invoking the error-handling middleware.
 - The error handler must be defined using app.use() with four parameters: err, req, res, and next. This is necessary for Express to recognize it as an error-handling middleware. If the next parameter is omitted, Express will treat the function as a regular middleware instead of an error handler, which is why all four parameters are required.
-- errorHandler must be defined using `app.use()` with four parameters : `err`, `req`, `res` and `next`.All 4 parameters are required for Express to distinguish between normal middleware and error-handling middleware.
+- errorHandler must be defined using `app.use()` with four parameters : `err`, `req`, `res` and `next`. All 4 parameters are required for Express to distinguish between normal middleware and error-handling middleware.
 - Purpose: Catches and handles errors that occur during the processing of requests.
 - Location: It must be defined after all the routes and other middleware. This is because Express processes middleware and routes in the order they are defined.
 - Function: Takes err, req, res, and next as parameters. Logs the error, sets the HTTP status code, and sends a JSON response with error details.
@@ -69,8 +70,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Use errorMiddleware after all Routes and Middlewares
 app.use((err: Error, req: Request, res: Response) => {
-  console.error("I am Error Middleware");
-  res.status(500).json({ message: "This is Error Message" });
+	console.error("I am Error Middleware");
+	res.status(500).json({ message: "This is Error Message" });
 });
 ```
 

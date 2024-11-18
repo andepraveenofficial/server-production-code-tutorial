@@ -30,7 +30,7 @@ console.log("Hello, world!");
 
 - Start the Application : `npm start`
 
-3. Install Auto Restarter : `npm install -D nodemon`
+3. Install Auto Restart : `npm install -D nodemon`
 
 - Start the Application : `nodemon index.js`
 - Change script in `package.json` file for add command to start the application.
@@ -99,14 +99,14 @@ const port = 5000;
 
 /* -----> Start the Server <----- */
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+	console.log(`Example app listening on port ${port}`);
 });
 
 /* -----> Routes <----- */
 
 app.get("/", (req: Request, res: Response) => {
-  console.log("I am Home Route");
-  res.send("I am Home route");
+	console.log("I am Home Route");
+	res.send("I am Home route");
 });
 ```
 
@@ -165,11 +165,11 @@ model Product {
 
 ```json
 {
-  "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./dist"
-  },
-  "include": ["src/**/*", "prisma/seeds/**/*"]
+	"compilerOptions": {
+		"rootDir": "./",
+		"outDir": "./dist"
+	},
+	"include": ["src/**/*", "prisma/seeds/**/*"]
 }
 ```
 

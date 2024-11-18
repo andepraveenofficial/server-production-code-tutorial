@@ -1,0 +1,74 @@
+###### Users ######
+
+
+### 01 Get All Users
+
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwMWVjYTk0Ny1hZGFlLTQ5MWEtYWM1MC03YjU2NzNjZTVmNTQiLCJpYXQiOjE3MzE5MDQyNTYsImV4cCI6MTczMjUwOTA1Nn0.RXgHiv2NrZ0WtVdSKeqYDRI9jN5cj3m6E0cG2ek8AhE
+GET http://localhost:5000/api/v1/users
+Cookie: refreshToken={{refreshToken}}
+
+
+### Get User by Id
+@id = 04b2c215-77d4-43c0-af1b-8e25924e787c
+
+GET http://localhost:5000/api/v1/users/{{id}}
+Cookie: refreshToken={{refreshToken}}
+
+
+### 02 Update User (Full Update)
+
+
+PUT http://localhost:5000/api/v1/users/{{id}}
+Cookie: refreshToken={{refreshToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Updated firstName",
+  "lastName":"Updated secondName"
+}
+
+
+### 03 Patch User (Partial Update)
+PUT http://localhost:5000/api/v1/users/{{id}}
+Cookie: refreshToken={{refreshToken}}
+Content-Type: application/json
+
+{
+  "firstName": "Partitial Updated firstName"
+}
+
+### 04 User Soft Delete
+DELETE http://localhost:5000/api/v1/users/{{id}}
+Cookie: refreshToken={{refreshToken}}
+
+
+####### Query Params ##########
+
+### Test 1: Default Pagination
+GET http://localhost:5000/api/v1/users
+Cookie: refreshToken={{refreshToken}}
+
+
+### Test 2: Specify Page 1 with 5 items (default 10 items)  per page
+GET http://localhost:5000/api/v1/users?page=1&limit=5
+Cookie: refreshToken={{refreshToken}}
+
+
+### Test 3: Page 3 with 5 items per page
+GET http://localhost:5000/api/v1/users?page=3&limit=5
+Cookie: refreshToken={{refreshToken}}
+
+
+### Test 4: Attempt to get a page beyond total pages
+GET http://localhost:5000/api/v1/users?page=100&limit=5
+Cookie: refreshToken={{refreshToken}}
+
+
+### Test 5: Attempt to use a limit beyond the maximum
+GET http://localhost:5000/api/v1/users?page=1&limit=200
+Cookie: refreshToken={{refreshToken}}
+
+### Test 6: Use pagination with sorting
+GET http://localhost:5000/api/v1/users?page=1&limit=10&sort=createdAt:desc
+Cookie: refreshToken={{refreshToken}}
+

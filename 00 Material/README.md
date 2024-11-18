@@ -95,5 +95,3 @@ Others :
 2. colorette
 
 ---
-
-healt endpoint
